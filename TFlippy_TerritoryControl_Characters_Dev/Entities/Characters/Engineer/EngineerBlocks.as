@@ -146,7 +146,7 @@ void addCommonEngineerBlocks(BuildBlock[][]@ blocks, int teamnum = 7)
 	{
 		AddIconToken("$icon_grinder$", "OldGrinder.png", Vec2f(40, 24), 0, teamnum);
 		BuildBlock b(0, "grinder_old", "$icon_grinder$", "Grinder:\n\nA dangerous machine capable of destroying almost everything.");
-		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 250);
+		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 10);
 		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 150);
 		AddRequirement(b.reqs, "blob", "mat_ironingot", "Iron Ingots", 5);
 		b.buildOnGround = true;
@@ -156,9 +156,9 @@ void addCommonEngineerBlocks(BuildBlock[][]@ blocks, int teamnum = 7)
 	{
 		AddIconToken("$icon_mini_grinder$", "AutomationIcons.png", Vec2f(24, 24), 2, teamnum);
 		BuildBlock b(0, "grinder", "$icon_mini_grinder$", "Mini-Grinder:\n\nA dangerous machine capable of destroying almost everything.");
-		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 250);
-		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 150);
-		AddRequirement(b.reqs, "blob", "mat_ironingot", "Iron Ingots", 5);
+		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 50);
+		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 15);
+		AddRequirement(b.reqs, "blob", "mat_ironingot", "Iron Ingots", 1);
 		b.buildOnGround = true;
 		b.size.Set(32, 16);
 		automation.push_back(b);
@@ -166,7 +166,7 @@ void addCommonEngineerBlocks(BuildBlock[][]@ blocks, int teamnum = 7)
 	{
 		BuildBlock b(0, "drillrig", "$icon_drillrig$", "Driller Mole:\n\nAn automatic drilling machine that mines resources underneath.");
 		AddRequirement(b.reqs, "blob", "drill", "Drill", 1);
-		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 100);
+		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 10);
 		AddRequirement(b.reqs, "blob", "mat_ironingot", "Iron Ingot", 2);
 		b.buildOnGround = true;
 		b.size.Set(24, 24);
@@ -175,8 +175,8 @@ void addCommonEngineerBlocks(BuildBlock[][]@ blocks, int teamnum = 7)
 	{
 		AddIconToken("$icon_hoppacker$", "Hoppacker.png", Vec2f(24, 24), 0, teamnum);
 		BuildBlock b(0, "hoppacker", "$icon_hoppacker$", "Hoppacker:\n\nA safe machine capable of storing and packing items into a crate.");
-		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 100);
-		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 50);
+		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 10);
+		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 20);
 		b.buildOnGround = true;
 		b.size.Set(24, 16);
 		automation.push_back(b);
@@ -212,31 +212,31 @@ void addCommonEngineerBlocks(BuildBlock[][]@ blocks, int teamnum = 7)
 	{
 		AddIconToken("$icon_inserter$", "Inserter.png", Vec2f(16, 16), 0);
 		BuildBlock b(0, "inserter", "$icon_inserter$", "Inserter:\n\nTransfers items between inventories next to it.\nLarge funnel acts as input, small funnel as output.");
-		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 25);
-		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 30);
+		AddRequirement(b.reqs, "blob", "mat_wood", "Wood", 5);
+		AddRequirement(b.reqs, "blob", "mat_stone", "Stone", 10);
 		b.buildOnGround = true;
 		b.size.Set(16, 16);
 		automation.push_back(b);
 	}
 	{
 		AddIconToken("$icon_chickenassembler$", "ChickenAssembler.png", Vec2f(56, 24), 0, teamnum);
-		BuildBlock b(0, "chickenassembler", "$icon_chickenassembler$", "UPF Assembly Line:\n\nA reverse-engineered assembly line used to manufacture some of the UPF products.");
-		AddRequirement(b.reqs, "blob", "mat_steelingot", "Steel Ingot", 20);
+		BuildBlock b(0, "chickenassembler", "$icon_chickenassembler$", "UPF Assembly Line:\n\nA reverse-engineered assembly line used to manufacture some of the UPF products.\n say good bye to automation tech");
+		AddRequirement(b.reqs, "blob", "mat_steelingot", "Steel Ingot", 10);
 		AddRequirement(b.reqs, "blob", "mat_ironingot", "Iron Ingot", 10);
 		AddRequirement(b.reqs, "blob", "mat_copperwire", "Copper Wire", 10);
 		// AddRequirement(b.reqs, "tech", "tech_automation_advanced", "Technology (Advanced Automation)", 1);
-		AddRequirement(b.reqs, "tech", "bp_automation", "Advanced Automation", 1);
+		// AddRequirement(b.reqs, "tech", "bp_automation", "Advanced Automation", 1);
 		b.buildOnGround = true;
 		b.size.Set(56, 24);
 		automation.push_back(b);
 	}
 	{
 		AddIconToken("$icon_chemlab$","ChemLab.png",Vec2f(48, 24), 0, teamnum);
-		BuildBlock b(0, "chemlab", "$icon_chemlab$", "Chemical Production Machine:\n\nA machine capable of manufacturing basic drugs and chemicals.");
-		AddRequirement(b.reqs, "blob", "mat_steelingot", "Steel Ingot", 20);
+		BuildBlock b(0, "chemlab", "$icon_chemlab$", "Chemical Production Machine:\n\nA machine capable of manufacturing basic drugs and chemicals.\nNo more requirements!");
+		AddRequirement(b.reqs, "blob", "mat_steelingot", "Steel Ingot", 10);
 		AddRequirement(b.reqs, "blob", "mat_ironingot", "Iron Ingot", 10);
 		AddRequirement(b.reqs, "blob", "mat_copperingot", "Copper Ingot", 40);
-		AddRequirement(b.reqs, "tech", "bp_chemistry", "Chemistry", 1);
+		// AddRequirement(b.reqs, "tech", "bp_chemistry", "Chemistry", 1);
 		b.buildOnGround = true;
 		b.size.Set(48, 24);
 		automation.push_back(b);
